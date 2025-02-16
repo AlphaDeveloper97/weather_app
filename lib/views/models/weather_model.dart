@@ -20,10 +20,10 @@ class WeatherModel {
   factory WeatherModel.fromJson(json) {
     return WeatherModel(
       city: json["location"]["name"],
-      maxtemp: json["forecast"]["forecastday"][0]["maxtemp_c"],
-      mintemp: json["forecast"]["forecastday"][0]["mintemp_c"],
-      temp: json["forecast"]["forecastday"][0]["avgtemp_c"],
-      date: json["current"]["last_updated"],
+      maxtemp: json["forecast"]["forecastday"][0]["day"]["maxtemp_c"],
+      mintemp: json["forecast"]["forecastday"][0]["day"]["mintemp_c"],
+      temp: json["forecast"]["forecastday"][0]["day"]["avgtemp_c"],
+      date: DateTime.parse(json["current"]["last_updated"]),
       image: json["forecast"]["forecastday"][0]["day"]["condition"]["icon"],
       condition: json["forecast"]["forecastday"][0]["day"]["condition"]["text"],
     );
