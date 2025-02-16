@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/weather%20cubit/get_weather_cubit.dart';
+import 'package:weather_app/helper/theme_color_item.dart';
 import 'package:weather_app/views/models/weather_model.dart';
 import 'package:weather_app/widgets/custom_text.dart';
 
@@ -7,11 +10,25 @@ class WeatherInfoBody extends StatelessWidget {
   final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
-    return Center(
+    WeatherModel weather =
+        BlocProvider.of<GetWeatherCubit>(context).weatherModel!;
+
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            ThemeColorItem().getThemeColor(weather.condition),
+            ThemeColorItem().getThemeColor(weather.condition)[300]!,
+            ThemeColorItem().getThemeColor(weather.condition)[50]!,
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 22),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomText(
               text: weatherModel.city,
