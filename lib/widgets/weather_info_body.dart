@@ -1,46 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/views/models/weather_model.dart';
 import 'package:weather_app/widgets/custom_text.dart';
 
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({super.key});
-
+  const WeatherInfoBody({super.key, required this.weatherModel});
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 22),
+        padding: EdgeInsets.symmetric(horizontal: 22),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CustomText(
-              text: "Cairo",
+            CustomText(
+              text: weatherModel.city,
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
-            const CustomText(text: "Update 2:30", fontSize: 22),
-            SizedBox(height: 50),
+            CustomText(text: "Update ${weatherModel.date}", fontSize: 22),
+            const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.network(
-                  "https://cdn.weatherapi.com/weather/64x64/night/143.png",
-                ),
-                const CustomText(
-                  text: "7",
+                Image.network("https:${weatherModel.image}"),
+                CustomText(
+                  text: weatherModel.temp.round().toString(),
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
-                const Column(
+                Column(
                   children: [
-                    CustomText(text: "MaxTemp:27"),
-                    CustomText(text: "MinTemp:27"),
+                    CustomText(
+                      text:
+                          "MaxTemp:${weatherModel.maxtemp.round().toString()}",
+                    ),
+                    CustomText(
+                      text:
+                          "MinTemp:${weatherModel.mintemp.round().toString()}",
+                    ),
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 50),
-            const CustomText(
-              text: "Sunny",
+            const SizedBox(height: 50),
+            CustomText(
+              text: weatherModel.condition,
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),

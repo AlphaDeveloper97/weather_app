@@ -9,11 +9,11 @@ class CustomTextFiled extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(top: 30, bottom: 30, left: 22),
-        label: CustomText(text: "Search", fontSize: 18),
-        labelStyle: TextStyle(fontSize: 16),
+        label: const CustomText(text: "Search", fontSize: 18),
+        labelStyle: const TextStyle(fontSize: 16),
         hintText: "Search",
-        hintStyle: TextStyle(fontSize: 16),
-        suffixIcon: Icon(Icons.search),
+        hintStyle: const TextStyle(fontSize: 16),
+        suffixIcon: const Icon(Icons.search),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(color: Colors.black),

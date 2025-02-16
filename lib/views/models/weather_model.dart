@@ -4,7 +4,7 @@ class WeatherModel {
   final double mintemp;
   final double temp;
   final DateTime date;
-  final String image;
+  final String? image;
   final String condition;
 
   WeatherModel({

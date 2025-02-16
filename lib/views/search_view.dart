@@ -9,8 +9,8 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: CustomText(text: "Search City", fontSize: 22)),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Center(child: CustomTextFiled()),
       ),
     );

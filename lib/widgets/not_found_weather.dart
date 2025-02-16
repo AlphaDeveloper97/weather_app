@@ -11,7 +11,7 @@ class NotFoundWeather extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CustomText(text: "There is no weather 😞 start", fontSize: 27),
-          CustomText(text: "Searching now 🔍", fontSize: 27),
+          CustomText(text: "searching now 🔍", fontSize: 27),
         ],
       ),
     );

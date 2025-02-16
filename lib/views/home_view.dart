@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/views/search_view.dart';
 import 'package:weather_app/widgets/custom_text.dart';
+import 'package:weather_app/widgets/not_found_weather.dart';
 
 import 'package:weather_app/widgets/weather_info_body.dart';
 
@@ -20,16 +21,16 @@ class HomeView extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SearchView();
+                    return const SearchView();
                   },
                 ),
               );
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
       ),
-      body: WeatherInfoBody(),
+      body: const NotFoundWeather(),
     );
   }
 }
