@@ -13,8 +13,8 @@ class WeatherInfoBody extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const CustomText(
-              text: "cairo",
-              fontSize: 27,
+              text: "Cairo",
+              fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
             const CustomText(text: "Update 2:30", fontSize: 22),
@@ -27,7 +27,7 @@ class WeatherInfoBody extends StatelessWidget {
                 ),
                 const CustomText(
                   text: "7",
-                  fontSize: 27,
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
                 const Column(
@@ -41,7 +41,7 @@ class WeatherInfoBody extends StatelessWidget {
             SizedBox(height: 50),
             const CustomText(
               text: "Sunny",
-              fontSize: 27,
+              fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
           ],

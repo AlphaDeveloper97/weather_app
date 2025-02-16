@@ -9,7 +9,7 @@ class CustomTextFiled extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(top: 30, bottom: 30, left: 22),
-        label: CustomText(text: "Search", fontSize: 22),
+        label: CustomText(text: "Search", fontSize: 18),
         labelStyle: TextStyle(fontSize: 16),
         hintText: "Search",
         hintStyle: TextStyle(fontSize: 16),
