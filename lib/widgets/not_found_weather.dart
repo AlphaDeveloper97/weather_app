@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/widgets/custom_text.dart';
 
 class NotFoundWeather extends StatelessWidget {
   const NotFoundWeather({super.key});
@@ -9,8 +10,8 @@ class NotFoundWeather extends StatelessWidget {
       child: const Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text("There is no weather 😞 start", style: TextStyle(fontSize: 27)),
-          Text("Searching now 🔍", style: TextStyle(fontSize: 27)),
+          CustomText(text: "There is no weather 😞 start", fontSize: 27),
+          CustomText(text: "Searching now 🔍", fontSize: 27),
         ],
       ),
     );

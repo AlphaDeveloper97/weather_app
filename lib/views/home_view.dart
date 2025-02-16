@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/widgets/not_found_weather.dart';
+import 'package:weather_app/widgets/custom_text.dart';
+
+import 'package:weather_app/widgets/weather_info_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -8,10 +10,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Weather App", style: TextStyle(fontSize: 22)),
+        title: CustomText(text: "Weather App", fontSize: 22),
+
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
-      body: NotFoundWeather(),
+      body: WeatherInfoBody(),
     );
   }
 }
